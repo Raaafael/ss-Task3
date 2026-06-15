@@ -24,21 +24,23 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-4xl text-red-600">Task Manager</h1>
-
-      <form onSubmit={addTask}>
-        <input name="formm" placeholder="Enter task..." />
-        <button>Add</button>
-      </form>
-
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            {task}
-            <button onClick={() => removeTask(index)}>x</button>
-          </li>
-        ))}
-      </ul>
+      <body className="flex justify-center flex items-center h-screen">
+        <div className="bg-blue-500 w-100 ">
+          <h1 className="text-4xl text-red-600">Task Manager</h1>
+          <form onSubmit={addTask}>
+            <input name="formm" placeholder="Enter task..." />
+            <button>Add</button>
+          </form>
+          <ul>
+            {tasks.map((task, index) => (
+              <li key={index}>
+                {task}
+                <button onClick={() => removeTask(index)}>x</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </body>
     </>
   );
 }
